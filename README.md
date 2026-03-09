@@ -7,6 +7,10 @@ It collects and analyzes movie data to provide recommendations and ratings so us
 https://flickerpx.vercel.app
 
 ---
+# preview
+![Alt text](images/image1.jpeg "hola")
+![Alt text](images/image2.jpeg "please star me")
+
 
 # 🚀 Features
 
