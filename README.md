@@ -8,8 +8,8 @@ https://flickerpx.vercel.app
 
 ---
 # preview
-![Alt text](images/image1.jpeg "hola")
-![Alt text](images/image2.jpeg "please star me")
+![Alt text](images/image1.jpg "hola")
+![Alt text](images/image2.jpg "please star me")
 
 
 # 🚀 Features
