@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineMatch — Movie Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <!-- ── Nav ──────────────────────────────────────────────────────────────── -->
+  <nav>
+    <a class="nav-logo" href="#">Cine<span>Match</span></a>
+    <ul class="nav-links">
+      <li><a href="#featuredSection" class="active">Featured</a></li>
+      <li><a href="#browseSection">Browse</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero + Search ─────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-eyebrow">AI-Powered Recommendations</div>
+    <h1>Find your next<br><em>favourite film</em></h1>
+    <p>Search any title and we'll surface the movies you'll love next.</p>
+
+    <div class="search-wrap">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Search a movie title…"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <div class="autocomplete" id="autocomplete"></div>
+    </div>
+  </section>
+
+  <!-- ── Search Results (hidden until search) ──────────────────────────────── -->
+  <section class="section" id="searchResultsSection" style="display:none">
+    <div class="section-header">
+      <h2 id="searchResultsLabel">Search Results</h2>
+    </div>
+    <div class="grid" id="searchResultsGrid"></div>
+  </section>
+
+  <!-- ── Recommendations (hidden until search) ─────────────────────────────── -->
+  <section class="section" id="recSection" style="display:none">
+    <div class="section-header">
+      <h2 id="recLabel">You might also like</h2>
+    </div>
+    <div class="grid" id="recGrid"></div>
+  </section>
+
+  <!-- ── Featured ──────────────────────────────────────────────────────────── -->
+  <section class="section" id="featuredSection">
+    <div class="section-header">
+      <h2>Top Rated</h2>
+      <a href="#browseSection">View all →</a>
+    </div>
+    <div class="grid" id="featuredGrid"></div>
+  </section>
+
+  <!-- ── Browse ────────────────────────────────────────────────────────────── -->
+  <section class="section" id="browseSection">
+    <div class="section-header">
+      <h2>Browse All</h2>
+    </div>
+
+    <!-- Genre chips + sort -->
+    <div class="filter-bar">
+      <div id="genreChips" style="display:contents"></div>
+      <select class="sort-select" id="sortSelect">
+        <option value="rating">Sort: Rating</option>
+        <option value="year">Sort: Year</option>
+        <option value="title">Sort: Title</option>
+      </select>
+    </div>
+
+    <div class="grid" id="browseGrid"></div>
+    <div id="pagination" class="pagination"></div>
+  </section>
+
+  <!-- ── Modal ─────────────────────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ── Toast ─────────────────────────────────────────────────────────────── -->
+  <div class="toast" id="toast"></div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
